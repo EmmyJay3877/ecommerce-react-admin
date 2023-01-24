@@ -3,6 +3,7 @@ import { useStateContext } from '../StateContext';
 import { useState } from 'react'
 import { useEffect } from 'react';
 import LoadingIcon from './LoadingIcon'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -90,7 +91,9 @@ const Login = () => {
       type='submit'
       >{showLoading===true ? <LoadingIcon/> : 'Login'}</button>
       <div className="flex mt-6 justify-center text-xs">
-        <a href='http://localhost:3000/forgetpassword/' className="text-blue-400 hover:text-blue-500">Forgot Password</a>
+        <Link to={`/forgetpassword`}>
+        <button href={`${process.env.REACT_APP_HOST}`} className="text-blue-400 hover:text-blue-500">Forgot Password</button>
+        </Link>
       </div>
     </form>
   
