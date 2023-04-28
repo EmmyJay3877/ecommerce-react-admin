@@ -40,13 +40,6 @@
   z-index: 1;
 }
 
-/* .outlet{
-  position: absolute;
-  top: 75px;
-  left: 200px;
-  width: 80%;
-} */
-
 
 .tr-div:nth-of-type(odd) {
     background-color: #f3f3f3;
@@ -319,7 +312,7 @@ animation: spin 0.8s linear infinite;
 100% { transform: rotate(360deg); }
 }
 
-.noti-icon:{
+.noti-icon{
   transition: transform .4s ease;
 }
 
