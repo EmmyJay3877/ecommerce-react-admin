@@ -39,6 +39,8 @@ export const StateProvider = ({children})=>{
     const [unverifiedUsers, setUnverifiedUsers] = useState(0)
     const [deleteunverifiedUsers, setDeleteUnverifiedUsers] = useState(false)
     const [showLoading, setShowLoading] = useState(false)
+    const [notification, setNotification] = useState([])
+    const [notiNumber, setNotiNumber] = useState(0)
 
     const handleClose = ()=> {
       setShow(false);
@@ -257,6 +259,65 @@ export const StateProvider = ({children})=>{
 
     const allItems = ()=>{
         return itemCards?.length
+    }
+
+    const getNotification = async ()=>{
+        let token_data = sessionStorage.getItem('token')
+        try {
+            const res = await fetch(`${process.env.REACT_APP_SERVER}/admin/notification`, {
+                headers: {'Authorization': `Bearer ${token_data}`}
+            })
+            const data = await res.json()
+            const statusCode = res.status
+            if (data && statusCode===200) {
+                setShowLoading(false)
+                setNotification(data.reverse())
+            }
+            if (statusCode===404){
+                setShowLoading(false)
+                setNotification()
+            }
+        } catch (error) {
+            alert(errorMsg)
+        }
+    }
+
+    const resetNotificationCount =async ()=>{
+        let token_data = sessionStorage.getItem('token')
+        try {
+            const res = await fetch(`${process.env.REACT_APP_SERVER}/admin/notification-reset`, {
+                headers: {'Authorization': `Bearer ${token_data}`}
+            })
+            const statusCode = res.status
+            if (statusCode===200) {
+                setShowLoading(false)
+            }
+            if (statusCode===404){
+                setShowLoading(false)
+            }
+        } catch (error) {
+            alert(errorMsg)
+        }
+    }
+
+    const loadNotification =  async ()=>{
+        let token_data = sessionStorage.getItem('token')
+        try {
+            const res = await fetch(`${process.env.REACT_APP_SERVER}/admin`, {
+                headers: {'Authorization': `Bearer ${token_data}`}
+            })
+            const data = await res.json()
+            const statusCode = res.status
+            if (data && statusCode===200) {
+                setShowLoading(false)
+                setNotiNumber(data._new_notification_count)
+            }
+            if (statusCode===404){
+                setShowLoading(false)
+            }
+        } catch (error) {
+            alert(errorMsg)
+        }
     }
 
     const deleteCustomer = async (event, id)=>{
@@ -591,7 +652,13 @@ export const StateProvider = ({children})=>{
                 deleteunverifiedUsers, 
                 setDeleteUnverifiedUsers,
                 showLoading, 
-                setShowLoading
+                setShowLoading,
+                getNotification,
+                notification,
+                notiNumber,
+                setNotiNumber,
+                loadNotification,
+                resetNotificationCount
             }}
     >
         {children}

@@ -12,6 +12,7 @@ import { StateProvider } from './StateContext';
 import Dashboard from './components/Dashboard';
 import EmailMsg from './components/EmailMsg';
 import ForgetPassword from './components/ForgetPassword';
+import Notification from './components/Notification';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/layout/customers' element={<Customers/>}/>
           <Route path='/layout/itemprofile' element={<ItemProfile/>}/>
           <Route path='/layout/orders' element={<Orders/>}/>
+          <Route path='/layout/notification' element={<Notification/>}/>
           <Route path='/layout/profile' element={<Profile/>}/>
           <Route path='/layout/edititem' element={<EditItem/>}/>
           </Route>
