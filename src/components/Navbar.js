@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { io } from 'socket.io-client'
 import { useStateContext } from '../StateContext';
 
-const socket = io('ws://127.0.0.1:8000', {path: '/ws/socket.io', autoConnect: false});
+const socket = io(`${process.env.REACT_APP_SOCKET_SERVER}`, {path: '/ws/socket.io', autoConnect: false});
 
 const Navbar = () => {
 
