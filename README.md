@@ -1,70 +1,94 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ecommerce Admin Panel using React
 
-## Available Scripts
+Welcome to the Ecommerce Admin Panel repository! This project provides an intuitive and efficient web interface for managing the Ecommerce platform's administrative tasks. Built with React, React Router, Socket.IO Client, Context API, and styled with Tailwind CSS, this admin panel application offers seamless navigation, real-time updates, and a visually appealing UI for overseeing products, customers, orders, and more. This README will guide you through setting up and running the admin panel application.
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Manage products, customers, and orders.
+- View detailed product information and edit product details.
+- Process and update order status.
+- Real-time updates and notifications using Socket.IO.
+- User-friendly and responsive UI with - Tailwind CSS styling.
+- Manage customer information
+- Admin authentication and authorization
+- Password reset and update option
+## Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Before you begin, ensure you have the following dependencies installed:
 
-### `npm test`
+- Node.js (>= 12.0)
+- npm or yarn package manager
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Client:** React, TailwindCSS
 
-### `npm run build`
+**Websocket:** Socket.IO Client
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Clone the repository
 
-### `npm run eject`
+```bash
+git clone https://github.com/EmmyJay3877/ecommerce-react-admin.git
+```
+    
+Install the required packages using npm or yarn:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+# or
+yarn install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+## Configuration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Set up environment variables:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a .env file in the root directory and add the following:
 
-## Learn More
+```bash
+ESLINT_NO_DEV_ERROS=true
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+REACT_APP_HOST=http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+REACT_APP_SERVER=http://localhost:8000
 
-### Code Splitting
+REACT_APP_SOCKET_SERVER=ws://localhost:8000
+```
+## Usage/Examples
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Admin must have registered using the FastAPI swagger interface
 
-### Analyzing the Bundle Size
+2. Run the admin panel:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+# or
+yarn start
+```
 
-### Making a Progressive Web App
+The admin panel will be accessible at http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Open your browser and navigate to http://localhost:3000 to interact with the admin panel.
 
-### Advanced Configuration
+4. A Screenshot of the Admin panel.
+![Screenshot of Admin Panel](https://res.cloudinary.com/ds3j3naem/image/upload/v1692098934/Screenshot_2023-08-15_122811_tcln6h.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+
+Contributions are always welcome!
+
+If you find any bugs or want to add new features, feel free to submit a pull request.
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
