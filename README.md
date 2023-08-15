@@ -4,7 +4,7 @@
 Welcome to the Ecommerce Admin Panel repository! This project provides an intuitive and efficient web interface for managing the Ecommerce platform's administrative tasks. Built with React, React Router, Socket.IO Client, Context API, and styled with Tailwind CSS, this admin panel application offers seamless navigation, real-time updates, and a visually appealing UI for overseeing products, customers, orders, and more. This README will guide you through setting up and running the admin panel application.
 
 
-## Features
+## 🧐 Features
 
 - Manage products, customers, and orders.
 - View detailed product information and edit product details.
